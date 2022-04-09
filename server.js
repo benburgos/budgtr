@@ -12,7 +12,7 @@ app.get('/budgets', (req, res) => {
 });
 
 app.get('/budgets/:index', (req, res) => {
-    res.send(budgetItems[req.params.index]);
+    res.render('show.ejs', { budgetItem: budgetItems[req.params.index] });
 });
 
 app.listen(PORT, () => {
