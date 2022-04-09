@@ -3,13 +3,12 @@ const PORT = process.env.PORT;
 
 const express = require('express');
 const app = express();
-
 const budgetItems = require('./models/budget.js')
 
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/budgets', (req, res) => {
-    res.render('index.ejs', { allItems: budgetItems });
+    res.render('index.ejs', { allBudgetItems: budgetItems });
 });
 
 app.get('/budgets/:index', (req, res) => {
