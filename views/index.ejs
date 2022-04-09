@@ -12,6 +12,10 @@
     <div class="container">
         <h1>Budgtr</h1>
         <table>
+            <tr>
+                <td colspan="2">Bank Account</td>
+                <td class="balance"><%= calculateBalance %></td>
+            </tr>
             <% for( budgetItem in allBudgetItems ) { %>
                 <tr>
                     <td> <%= allBudgetItems[budgetItem].date %>  </td>
