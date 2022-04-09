@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <title>Budgtr Item Detail</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1> <%= budgetItem.name %> </h1>
+        <a href="/budgets"><button>Return to All Items</button></a>
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Tags</th>
+            </tr>
+            <tr>
+                <td> <%= budgetItem.date  %> </td>
+                <td> <%= budgetItem.from  %> </td>
+                <td> <%= budgetItem.name %> </td>
+                <td> <%= budgetItem.amount %> </td>
+                <td> <%= budgetItem.tags %> </td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
