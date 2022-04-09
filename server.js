@@ -19,6 +19,13 @@ app.get('/budgets/:index', (req, res) => {
     res.render('show.ejs', { budgetItem: budgetItems[req.params.index] });
 });
 
+app.post('/budgets', (req, res) => {
+    req.body.tags = req.body.tags.replace(',', '')
+    req.body.tags = req.body.tags.split(' ')
+    budgetItems.push(req.body)
+    res.redirect('/budgets')
+});
+
 app.listen(PORT, () => {
     console.log(`You're listening to smooth jazz on port ${PORT}!`);
 });
