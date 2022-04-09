@@ -11,6 +11,10 @@ app.get('/budgets', (req, res) => {
     res.render('index.ejs', { allBudgetItems: budgetItems });
 });
 
+app.get('/budgets/new', (req, res) => {
+    res.render('new.ejs')
+})
+
 app.get('/budgets/:index', (req, res) => {
     res.render('show.ejs', { budgetItem: budgetItems[req.params.index] });
 });
