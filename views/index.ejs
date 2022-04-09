@@ -14,7 +14,7 @@
         <table>
             <tr>
                 <td colspan="2">Bank Account</td>
-                <td class="balance"><%= calculateBalance %></td>
+                <td>$<span class="balance"><%= calculateBalance %></span></td>
             </tr>
             <% for( budgetItem in allBudgetItems ) { %>
                 <tr>
@@ -26,5 +26,22 @@
         </table>
         <a href="/budgets/new"><button>Add new Budget Item</button></a>
     </div>
+    <script>
+
+    let balance = Number(document.querySelector('.balance').textContent);
+    let body = document.querySelector('body');
+    let table = document.querySelector('table');
+    let button = document.querySelector('button');
+    
+    if (balance < 0) {
+        body.style.backgroundColor = 'rgb(187, 64, 64)'
+        table.style.color = 'white'
+        button.style.color = 'white'}
+    else if (balance > 1000) {
+        body.style.backgroundColor = 'rgb(33, 88, 189)'
+        table.style.color = 'white'
+        button.style.color = 'white'};
+
+    </script>
 </body>
 </html>
