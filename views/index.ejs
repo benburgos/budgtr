@@ -15,7 +15,7 @@
             <% for( budgetItem in allBudgetItems ) { %>
                 <tr>
                     <td> <%= allBudgetItems[budgetItem].date %>  </td>
-                    <td> <a href="/budgets"> <%= allBudgetItems[budgetItem].from %> </a> </td>
+                    <td> <a href="/budgets/<%= budgetItem %>"> <%= allBudgetItems[budgetItem].from %> </a> </td>
                     <td> <%= allBudgetItems[budgetItem].amount %> </td>
                 </tr>
             <% } %>
