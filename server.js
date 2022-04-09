@@ -6,8 +6,10 @@ const app = express();
 
 const budgetItems = require('./models/budget.js')
 
+app.use(express.urlencoded({ extended: false }));
+
 app.get('/budgets', (req, res) => {
-    res.send(budgetItems);
+    res.render('index.ejs', { allItems: budgetItems });
 });
 
 app.get('/budgets/:index', (req, res) => {
